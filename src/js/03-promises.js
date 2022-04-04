@@ -20,8 +20,6 @@ const ref = {
   form: document.querySelector('.form'),
 };
 
-let promiseCount = 0;
-
 ref.form.addEventListener('submit', onSubmit);
 
 function onSubmit(e) {
