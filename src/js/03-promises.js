@@ -41,3 +41,4 @@ function onSubmit(e) {
     newDelay += delayStep;
   }
 }
+// для коммита
