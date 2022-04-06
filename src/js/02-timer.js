@@ -37,14 +37,16 @@ const calendar = flatpickr(ref.input, options);
 class Timer {
   constructor({ time }) {
     this.time = time;
-    this.isActive = false;
+    // this.isActive = false;
     this.intervalId = null;
   }
   onStartTimer() {
-    if (this.isActive) {
-      return;
-    }
+    // if (this.isActive) {
+    //   return;
+    // }
     Notify.success('Timer started');
+    ref.input.setAttribute('disabled', '');
+    ref.button.setAttribute('disabled', '');
     this.intervalId = setInterval(() => {
       const deltaTime = choicedDates - Date.now();
       if (deltaTime >= 0) {
@@ -53,7 +55,9 @@ class Timer {
         this.isActive = true;
       } else {
         clearInterval(this.intervalId);
-        this.isActive = false;
+        // this.isActive = false;
+        ref.input.removeAttribute('disabled');
+        ref.button.removeAttribute('disabled');
         return;
       }
     }, 1000);

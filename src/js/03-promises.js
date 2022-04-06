@@ -40,5 +40,6 @@ function onSubmit(e) {
       });
     newDelay += delayStep;
   }
+  e.currentTarget.reset();
 }
 // для коммита
